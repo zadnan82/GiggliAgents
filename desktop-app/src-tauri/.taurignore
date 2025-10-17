@@ -1,0 +1,6 @@
+﻿embedded/**/__pycache__/**
+embedded/**/*.pyc
+*.db
+*.log
+*.pyc
+__pycache__

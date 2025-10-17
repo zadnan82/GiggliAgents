@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    container_name: giggliagents_db
+    environment:
+      POSTGRES_USER: giggliagents
+      POSTGRES_PASSWORD: changeme123
+      POSTGRES_DB: giggliagents
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  # FastAPI Backend
+  api:
+    build: .
+    container_name: giggliagents_api
+    environment:
+      DATABASE_URL: postgresql://giggliagents:changeme123@db:5432/giggliagents
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-key}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-dev-jwt-key}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
+      SENDGRID_FROM_EMAIL: ${SENDGRID_FROM_EMAIL}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
+      USE_S3: "False"
+      DOWNLOAD_PATH: /app/downloads
+    volumes:
+      - ./downloads:/app/downloads
+      - ./app:/app/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  # Nginx - COMMENTED OUT FOR DEVELOPMENT
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: giggliagents_nginx
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   depends_on:
+  #     - api
+  #   restart: unless-stopped
+
+volumes:
+  postgres_data:

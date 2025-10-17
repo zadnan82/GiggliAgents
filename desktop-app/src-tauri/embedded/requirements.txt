@@ -1,0 +1,35 @@
+# Core RAG Dependencies
+chromadb>=0.4.22
+sentence-transformers>=2.3.1
+
+# Document Processing
+pypdf2>=3.0.1
+python-docx>=1.1.0
+python-pptx>=0.6.23
+markdown>=3.5.1
+beautifulsoup4>=4.12.2
+
+# Excel & CSV
+openpyxl>=3.1.2
+pandas>=2.1.0
+
+# Images (OCR)
+pytesseract>=0.3.10
+pillow>=10.1.0
+
+# Audio/Video (Transcription)
+openai-whisper>=20231117
+pydub>=0.25.1
+
+# Archives
+py7zr>=0.20.8
+
+# LLM Integration
+ollama>=0.1.7
+openai>=1.12.0
+anthropic>=0.18.1
+
+# Utilities
+tiktoken>=0.6.0
+pyyaml>=6.0.1
+python-dateutil>=2.8.2

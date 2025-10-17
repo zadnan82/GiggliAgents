@@ -1,0 +1,17 @@
+id: vs
+name: Vector Store
+version: 1.0.0
+description: Local vector database using ChromaDB
+author: GiggliAgents
+category: storage
+
+actions:
+  - add_document
+  - search
+  - delete_document
+  - get_all_documents
+  - get_stats
+  - reset
+
+dependencies:
+  - chromadb

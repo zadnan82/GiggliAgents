@@ -1,0 +1,14 @@
+id: eg
+name: Embedding Generator
+version: 1.0.0
+description: Generate vector embeddings for text
+author: GiggliAgents
+category: ai
+
+actions:
+  - generate_embeddings
+  - embed_query
+
+dependencies:
+  - sentence-transformers
+  - openai

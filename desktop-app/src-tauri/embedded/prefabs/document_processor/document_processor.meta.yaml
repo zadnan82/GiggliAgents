@@ -1,0 +1,15 @@
+id: dp
+name: Document Processor
+version: 1.0.0
+description: Extract and chunk text from documents
+author: GiggliAgents
+category: processing
+
+actions:
+  - extract_text
+  - chunk_text
+
+dependencies:
+  - PyPDF2
+  - python-docx
+  - python-pptx

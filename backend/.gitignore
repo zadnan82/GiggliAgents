@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Downloads (app packages)
+downloads/*.exe
+downloads/*.dmg
+downloads/*.AppImage
+downloads/*.zip
+
+# Keep directory structure
+!downloads/.gitkeep
+!downloads/windows/.gitkeep
+!downloads/macos/.gitkeep
+!downloads/linux/.gitkeep
+
+# Alembic
+alembic/versions/*.pyc
+
+
+# Downloads - Keep structure but not actual files
+downloads/**/*
+!downloads/.gitkeep
+!downloads/README.md
+!downloads/windows/.gitkeep
+!downloads/macos/.gitkeep
+!downloads/linux/.gitkeep
+!downloads/**/.gitignore

@@ -1,0 +1,28 @@
+[package]
+name = "giggliagents"
+version = "1.0.0"
+description = "RAG Assistant - Private AI Knowledge Base"
+authors = ["GiggliAgents Team"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.5", features = [ 
+    "window-start-dragging", "window-show", "window-unminimize", 
+    "fs-remove-dir", "fs-read-file", "fs-read-dir", "fs-exists", 
+    "window-unmaximize", "fs-copy-file", "fs-create-dir", 
+    "window-close", "window-minimize", "window-maximize", 
+    "window-hide", "fs-remove-file", "fs-write-file", 
+    "dialog-save", "dialog-open", "shell-open"
+] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+pyo3 = { version = "0.20", features = ["auto-initialize", "extension-module"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

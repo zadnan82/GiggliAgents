@@ -1,0 +1,16 @@
+id: rc
+name: RAG Chain
+version: 1.0.0
+description: Retrieval-Augmented Generation chain
+author: GiggliAgents
+category: ai
+
+actions:
+  - ask
+  - get_history
+  - clear_history
+
+dependencies:
+  - ollama
+  - openai
+  - anthropic
